@@ -1,32 +1,30 @@
 
 //  loder
 var tl = gsap.timeline();
-tl.from("#page1-loder" , {
-    top : -1000,
-   duration :1 ,
-   stagger : 1,
-})
-tl.from(".container1" , {
-    y : 800,
-   duration :1 ,
-   stagger : 0.2,
-})
-tl.to(".container1" , {
-    scale : 0,
-   duration :1 ,
-   stagger : 0.1,
-})
-tl.from(".text" , {
-    scale : 0,
-   duration :2 ,
-   stagger : 0.1,
-})
-tl.to("#page1-loder" , {
-  top : -1000,
- duration :2 ,
-})
-
-
+tl.from("#page1-loder", {
+  top: -1000,
+  duration: 1,
+  stagger: 1,
+});
+tl.from(".container1", {
+  y: 800,
+  duration: 1,
+  stagger: 0.2,
+});
+tl.to(".container1", {
+  scale: 0,
+  duration: 1,
+  stagger: 0.1,
+});
+tl.from(".text", {
+  scale: 0,
+  duration: 2,
+  stagger: 0.1,
+});
+tl.to("#page1-loder", {
+  top: -1000,
+  duration: 2,
+});
 
 var lastScrollTop = 0;
 var navbar = document.querySelector("#page1 #nav");
@@ -50,9 +48,10 @@ menu.addEventListener("mouseenter", function () {
 menu.addEventListener("mouseleave", function () {
   dropdown.style.display = "none";
 })
+
 //  page3
+
 var elem = document.querySelectorAll(".elem")
-// var elemimg = document.querySelector(".elem img")
 
 elem.forEach((element) => {
 
@@ -66,8 +65,8 @@ elem.forEach((element) => {
 
     element.childNodes[3].style.left = dets.clientX + "px"
   })
-
 })
+
 // page 4
 
 gsap.to("#page4 .img", {
@@ -76,7 +75,7 @@ gsap.to("#page4 .img", {
   scrollTrigger: {
     scroller: "body",
     trigger: "#page4",
-    markers: true,
+    // markers: true,
     start: "top 0%",
     end: "top -60%",
     scrub: 2,
@@ -84,3 +83,11 @@ gsap.to("#page4 .img", {
 
   }
 })
+
+var texth1 =  document.querySelector("#page4 #texth1").textContent
+var textone =  texth1.split("");
+var cutter = "";
+textone.forEach(function(e){
+    cutter += `<span>${e}</span>`;
+})
+document.querySelector("#texth1")
