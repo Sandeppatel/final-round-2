@@ -1,4 +1,5 @@
 
+
 //  loder
 var tl = gsap.timeline();
 tl.from("#page1-loder", {
@@ -26,7 +27,38 @@ tl.to("#page1-loder", {
   duration: 2,
 });
 //  page1
+// var tlone = gsap.timeline();
 
+
+// page 7
+function printingtext() {
+  var textElements = document.querySelectorAll("#page7 #text h4");
+
+  textElements.forEach(function (element) {
+      var words = element.textContent.split(' ');
+      var wrappedWords = words.map(function (word) {
+          return '<span>' + word + '</span>';
+      }).join(' ');
+      element.innerHTML = wrappedWords;
+  });
+}
+
+printingtext();
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from("#page7 #text h4", {
+  y: 500,
+  opacity: 2,
+  duration: 1,
+  stagger: 0.1,
+  scrollTrigger: {
+      scroller: "body",
+      trigger: "#page7",
+
+  }
+});
+// 
 var img1 = document.querySelector("#page1-bottom #one h4");
 var imgone = document.querySelector("#page1-bottom #one .img1");
 
